@@ -5,6 +5,7 @@ const cors = require('cors');
 require('dotenv').config();
 const db = require('./config/db');
 const authRoutes = require('./routes/authRoutes');
+const jobRoutes = require('./routes/jobRoutes');
 const { swaggerUi, specs } = require('./config/swagger');
 
 const app = express();
@@ -17,6 +18,9 @@ app.use(express.json());
 
 // mount auth routes
 app.use('/api/auth', authRoutes);
+
+// mount job routes
+app.use('/api', jobRoutes);
 
 // mount swagger docs
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(specs));
