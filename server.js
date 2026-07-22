@@ -32,5 +32,4 @@ app.get('/', (req, res) => {
 app.listen(PORT, () => {
     console.log(`server is running successfully on port ${PORT}`);
     console.log(`swagger documentation is available at http://localhost:${PORT}/api-docs`);
-    console.log("HEY , Are You There?...");
 });
